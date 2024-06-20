@@ -1,8 +1,8 @@
 package me.dio.credit.request.system.contoller
 
-import me.dio.credit.request.system.DTO.CustomerDTO
-import me.dio.credit.request.system.DTO.CustomerUpdateDTO
-import me.dio.credit.request.system.DTO.CustomerView
+import me.dio.credit.request.system.DTO.Customer.CustomerDTO
+import me.dio.credit.request.system.DTO.Customer.CustomerUpdateDTO
+import me.dio.credit.request.system.DTO.Customer.CustomerView
 import me.dio.credit.request.system.entity.Customer
 import me.dio.credit.request.system.service.impl.CustomerService
 import org.springframework.web.bind.annotation.DeleteMapping
@@ -37,7 +37,7 @@ class CustomerController (private val customerService: CustomerService){
     }
 
     @PatchMapping
-    fun updateCustomer( @RequestParam(value = "customerId") id: Long, @RequestBody customerUpdateDTO: CustomerUpdateDTO):CustomerView{
+    fun updateCustomer( @RequestParam(value = "customerId") id: Long, @RequestBody customerUpdateDTO: CustomerUpdateDTO): CustomerView {
         val customer: Customer = this.customerService.findById(id)
         val customerToUpdate: Customer = customerUpdateDTO.toEntty(customer)
         val  customerUpdated: Customer = this.customerService.save(customerToUpdate)

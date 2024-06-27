@@ -1,7 +1,6 @@
 package me.dio.credit.request.system.DTO.Credit
 
 import jakarta.validation.constraints.Future
-import jakarta.validation.constraints.Negative
 import jakarta.validation.constraints.NotNull
 import jakarta.validation.constraints.Positive
 import me.dio.credit.request.system.entity.Credit

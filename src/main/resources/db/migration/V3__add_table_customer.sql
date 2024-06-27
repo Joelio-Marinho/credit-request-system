@@ -1,1 +1,1 @@
-ALTER TABLE customer ADD income DECIMAL NOT NULL
+/**ALTER TABLE customer ADD income DECIMAL NOT NULL
